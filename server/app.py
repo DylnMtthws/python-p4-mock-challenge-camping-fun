@@ -27,7 +27,7 @@ def home():
 
 class CamperResource(Resource):
     def get(self):
-        camper_list = [camper.to_dict(rules=('-signups,')) for camper in Camper.query.all()]
+        camper_list = [camper.to_dict(rules=('-signups',)) for camper in Camper.query.all()]
         return camper_list, 200
     
     def post(self):
